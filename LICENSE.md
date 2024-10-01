@@ -1,0 +1,2 @@
+# This repository
+Unless stated otherwise, the contents of this repository are licensed under the [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license.
