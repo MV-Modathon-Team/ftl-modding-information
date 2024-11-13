@@ -1,7 +1,7 @@
 If you're new to Superluminal, I recommend watching and following along with the video tutorial for using it to create player ships for Hyperspace and Multiverse.
 
 ## FTL HS/MV Player Ship Tutorial
-[![FTL HS/MV Player Ship Tutorial](https://img.youtube.com/vi/3PSGVwlA95o/0.jpg)](https://www.youtube.com/watch?v=3PSGVwlA95o)
+[![FTL HS/MV Player Ship Tutorial](https://img.youtube.com/vi/3PSGVwlA95o/maxresdefault.jpg)](https://www.youtube.com/watch?v=3PSGVwlA95o)
 
 There are a few things I missed when making this tutorial. Under Ship Loadout and Properties, your Layout Filename and Image Namespace should also use a unique prefix like the one for the Blueprint Name.
 
