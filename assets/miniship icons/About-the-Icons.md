@@ -1,4 +1,4 @@
-Most of the icons provided are 20 pixels tall. When placing them in the icon box, there will be a 1 pixel offset between the icon and the top and bottom margins. If the icon is larger, it should be still be centered vertically in the box.
+Every miniship in Multiverse has icons, which are placed inside `Icon_Box.png`. Most of the icons provided are 20 pixels tall. When placing them in the icon box, there will be a 1 pixel offset between the icon and the top and bottom margins. If the icon is larger, it should be still be centered vertically in the box.
 
 #### The order of icons from left to right is:
 - Auto Ship (if the ship is an auto ship)
