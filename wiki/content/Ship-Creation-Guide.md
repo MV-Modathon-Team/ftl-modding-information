@@ -85,7 +85,7 @@ To add unlock conditions, create a closing tag for the `ship` append and add an 
 ```xml
 <mod:findLike type="ships" limit="1">
     <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="true" b="false" c="false" secret="false">
-		<unlock variant="a" silent="false">
+        <unlock variant="a" silent="false">
             <type>1</type> <!-- A value between 0 and 5 -->
             <shipReq>PLAYER_SHIP_NAME</shipReq>
             <value>8</value> <!-- Used only for type 1 -->
