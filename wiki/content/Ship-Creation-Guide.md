@@ -1,4 +1,4 @@
-If you're new to Superluminal, I recommend watching and following along with the video tutorial for using it to create player ships for Hyperspace and Multiverse.
+If you're new to Superluminal, I recommend watching and following along with the video tutorial for using it to create player ships for [Hyperspace](https://subsetgames.com/forum/viewtopic.php?t=35095) and [Multiverse](https://subsetgames.com/forum/viewtopic.php?t=35332).
 
 ## FTL HS/MV Player Ship Tutorial
 [![FTL HS/MV Player Ship Tutorial](https://img.youtube.com/vi/3PSGVwlA95o/maxresdefault.jpg)](https://www.youtube.com/watch?v=3PSGVwlA95o)
@@ -38,9 +38,22 @@ Once you know the coordinates, you can add the thrusters to your ship's layout f
 
 Replace `your_thruster_animation_name` with the name you gave your thruster animation in `animations.xml`, and replace the coordinates with the coordinates of your thrusters. Add as many `thruster` tags as are necessary. If you set the `sync` attribute in the `thrusters` tag to `false`, Then the frame each animation starts on will be randomized. If set to `true` they will all start on the same frame.
 
-## Generating Custom Shield Images
+## Creating Custom Shield Images
 
-UNDER CONSTRUCTION
+### Manual Method
+
+First, download [assets/Sheild_Template.xcf](../blob/master/assets/Sheild_Template.xcf) from this repository and open it in GIMP. Select the Shield layer, go to Layer > Scale Layer, and click the chain icon to the left of the dimensions to unlink them. Enter the dimensions you want and click the Scale button.
+
+When the shield is the size you want, use the Select by Color Tool to select all of the blue pixels on the Honeycomb layer. With the selection active, go back to the Shield layer, then go to Colors > Hue-Saturation. Make the following adjustments:<br/>
+Hue: -2<br/>
+Lightness: +38<br/>
+Saturation: +7<br/>
+
+Press the OK button, then click the eye icon next to the Honeycomb layer. Press Shift+Ctrl+A to deselect the honeycomb pattern. If you've done everything correctly, the pattern should now appear on the shield. To finish, go to Image > Crop to Content, then go to File > Export As. Save the image with the appropriate name and place it in the `img/ship` folder of your mod.
+
+### Script Method
+
+If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](https://youtu.be/08GqtK9hUjE), you can use the script included with Multiverse to generate a shield image automatically. Open the latest Multiverse assets zip archive and extract `shield_base_bubble.png`, `shield_base_hex.png` and `shield-updater.py` from the `img/ship` directory. Place them in the same directory as your shield image and resize your shield image to whatever dimensions you want, then run `shield-updater.py`. When you're done, you can remove the three files extracted from Multiverse.
 
 ## Unlock Conditions and Icons
 
