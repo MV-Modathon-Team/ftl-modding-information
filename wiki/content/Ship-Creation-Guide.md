@@ -53,7 +53,7 @@ Press the OK button, then click the eye icon next to the Honeycomb layer. Press 
 
 ### Script Method
 
-If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](https://youtu.be/08GqtK9hUjE), you can use the script included with Multiverse to generate a shield image automatically. Open the latest Multiverse assets zip archive and extract `shield_base_bubble.png`, `shield_base_hex.png` and `shield-updater.py` from the `img/ship` directory. Place them in the same directory as your shield image and resize your shield image to whatever dimensions you want, then run `shield-updater.py`. When you're done, you can remove the three files extracted from Multiverse.
+If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](https://youtu.be/08GqtK9hUjE), you can use the script included with Multiverse to generate a shield image automatically. Open the latest Multiverse assets `.zip` archive and extract `shield_base_bubble.png`, `shield_base_hex.png` and `shield-updater.py` from the `img/ship` directory. Place them in the same directory as your shield image and resize your shield image to whatever dimensions you want, then run `shield-updater.py`. When you're done, you can remove the three files extracted from Multiverse.
 
 ## Unlock Icons and Conditions
 
@@ -153,6 +153,90 @@ The attributes of the `arrow` tag function as follows:<br/>
 `x` and `y` - Offset coordinates for arrow after applying the automatic offset from the `direction` attribute.<br/>
 `mirrorX` and `mirrorY` - Mirrors the arrow asset over the X and Y axes respectively.
 
-## Combining Mods
+## Combining Ship Mods
 
-UNDER CONSTRUCTION
+If you have multiple ship mods that you want to combine into a single patchable archive, first pick which one you want to move all the content to. We'll treat this as the primary mod. Move everything from the `img` folder of the secondary mod into the `img` folder of the primary one. Don't do the same for everything in the `data` folder, as that would override the data of one of the mods. In order to combine those files, you'll have to edit some of them directly. If you haven't already, I recommend reading the [XML Guide](XML-Guide) before continuing.
+
+For both the `.xml` and `.txt` layout files, simply move all the ones from the secondary mod into the `data` folder of the primary. For the `blueprints.xml.append` file, open the one from the secondary mod in the editor of your choice. Copy the entirety of the `shipBlueprint`, then paste it into the `blueprints.xml.append` of the primary mod.
+
+`hyperspace.xml.append` is a bit more involved, and the method you use to combine it will depend on whether you're adding a different variant for the same ship class or a different ship entirely.
+
+For adding a different variant, suppose the `hyperspace.xml.append` of your primary mod looks like this:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="true" b="false" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_TESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+</mod:findLike>
+```
+
+And the `hyperspace.xml.append` of your secondary mod looks like this:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="false" b="true" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_TESTREL_2">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+</mod:findLike>
+```
+
+In order to combine them, you would modify your primary `hyperspace.xml.append` so that it looks like this:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="true" b="true" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_TESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+    <mod-append:customShip name="PLAYER_SHIP_CVX_TESTREL_2">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+</mod:findLike>
+```
+
+Note that the new `customShip` tag was copied in, but the new `ship` tag wasn't. Instead, since a B variant for the same ship class was added, we simply changed the value of the `ship` tag's `b` attribute from `false` to `true`.
+
+Now suppose instead that you wanted to add an entirely new ship to the primary mod with a `hyperspace.xml.append` which looks like this:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_BESTREL" a="true" b="false" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_BESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+</mod:findLike>
+```
+
+In order to combine them, you would modify your primary `hyperspace.xml.append` so that it looks like this:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="true" b="false" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_TESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+    <mod-append:ship name="PLAYER_SHIP_CVX_BESTREL" a="true" b="false" c="false" />
+    <mod-append:customShip name="PLAYER_SHIP_CVX_BESTREL">
+        <hiddenAug>SHIP_KESTREL</hiddenAug>
+        <hiddenAug>FOR_MULTIVERSE</hiddenAug>
+        <crewLimit>11</crewLimit>
+    </mod-append:customShip>
+</mod:findLike>
+```
+
+Note that both the `ship` tag and the `customShip` tag were copied in with no modifications.
