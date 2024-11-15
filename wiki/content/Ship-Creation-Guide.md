@@ -57,6 +57,8 @@ If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](h
 
 ## Unlock Icons and Conditions
 
+### Icons
+
 Achievement Icons can be made using this palette.
 
 [[/img/ship-creation-guide/pallete-achievement.png]]
@@ -64,6 +66,8 @@ Achievement Icons can be made using this palette.
 To make an icon from your ship's hull image, you can follow AgentTHeKat's tutorial.
 
 [![cheivements](https://img.youtube.com/vi/HNQs6TZ3xVw/maxresdefault.jpg)](https://www.youtube.com/watch?v=HNQs6TZ3xVw)
+
+### Conditions
 
 Once you've made the icon, give it the same name as the Layout Filename, with `_1` added to the end before the file extension. For example, if the layout is named `mup_cvx_testrel_a`, call the achievement icon `mup_cvx_testrel_a_1.png`. Put it in the `img/achievements` folder of your mod.
 
@@ -115,9 +119,39 @@ The value of the `type` tag determines the method required to unlock it. There a
 `4` - Ship is unlocked when some other condition is met, either by an `unlockCustomShip` tag in an event or a call of `AchievementTracker::UnlockShip` in a Lua script.<br/>
 `5` - Ship is unlocked when you've won the game with all other ships under `victories`.
 
-The value of `shipReq` determines which ship you have to be playing with to unlock the ship. This is typically used for unlocking different variants of the same class.
+The value of `shipReq` determines which ship you have to be playing with to unlock the ship. This is typically used for unlocking different variants of the same class, or unlocking the next ship in order on the same page.
 
 If you want to define multiple ways to unlock a single ship, you can add as many `unlock` tags for it as you want.
+
+### Arrows
+
+In vanilla, you can unlock new ship classes without completing their questlines by getting to sector 5 with the previous ship in the order. This is shown by an arrow between the ships with a tooltip when you hover your cursor over it.
+
+[[/img/ship-creation-guide/unlock-arrow.png]]
+
+These arrows can also be defined for your ships by adding the `arrow` tag as a child of the `ship` tag:
+
+```xml
+<mod:findLike type="ships" limit="1">
+    <mod-append:ship name="PLAYER_SHIP_CVX_TESTREL" a="true" b="false" c="false" secret="false">
+        <arrow variant="a" tooltip="ship_unlock_arrow_tooltip" tooltipText="Tooltip text for hovering arrow with cursor" image="arrow_image.png" lockedImage="arrow_image_locked.png" unlockedImage="arrow_image_unlocked.png" direction="up/left/down/right" x="0" y="0" mirrorX="false" mirrorY="false">PLAYER_SHIP_NAME</arrow>
+        <!-- Etc... -->
+    </mod-append:ship>
+    <!-- Etc... -->
+</mod:findLike>
+```
+The value of the `arrow` tag determines what the target ship is. The arrow will be drawn going to the target ship from the ship that the `arrow` tag belongs to. In this example, the arrow would be drawn from `PLAYER_SHIP_CVX_TESTREL` to `PLAYER_SHIP_NAME`.
+
+The attributes of the `arrow` tag function as follows:<br/>
+`variant` - Value can be `a`, `b`, `c` or `all`. Determines which variant the arrow is drawn for. The source and target ship must be the same variant. If the value is set to `all` or the `variant` attribute is omitted, then the arrow appears on every page (but the target ship is always the specific variant).<br/>
+`tooltip` - The ID of the text as defined in `text_misc.xml` to use for the hover tooltip. For defining text strings, see the [Misc Data Guide](Misc-Data-Guide).<br/>
+`tooltipText` - Literal text to use for hover tooltip. Use instead of the `tooltip` attribute if you want to define the text directly instead of in `text_misc.xml`.<br/>
+`image` - Full image name of the arrow asset. Arrow images must be in the `img\customizeUI` folder of your mod. Uses the default victory arrow asset in the corresponding direction if omitted.<br/>
+`lockedImage` - Full image name of the arrow asset when source ship is locked. Uses the default locked arrow asset in the corresponding direction if omitted.<br/>
+`unlockedImage` - Full image name of the arrow asset when the target ship is unlocked. No default, if unspecified then no arrow is rendered when the target ship is unlocked.<br/>
+`direction` - Value can be `up`, `down`, `left` or `right`. Determines the direction which the arrow points, and is used to place the image relative to the button. Omit for default (0, 0) offset.<br/>
+`x` and `y` - Offset coordinates for arrow after applying the automatic offset from the `direction` attribute.<br/>
+`mirrorX` and `mirrorY` - Mirrors the arrow asset over the X and Y axes respectively.
 
 ## Combining Mods
 
