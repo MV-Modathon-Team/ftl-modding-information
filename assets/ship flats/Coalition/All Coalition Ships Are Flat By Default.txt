@@ -1,0 +1,1 @@
+All coalition enemies are flat by default

@@ -1,0 +1,3 @@
+All Suzerain ships are flat by default
+
+Note the Suzerain Cruiser was the only Suzerain ship untouched when the Suzerain ship art was touched up, so the sprite is a bit more dated and ideally will be touched up or redone at some point in the future (probably a long while from now)
