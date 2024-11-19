@@ -1,9 +1,13 @@
 If you're new to Superluminal, I recommend watching and following along with the video tutorial for using it to create player ships for [Hyperspace](https://subsetgames.com/forum/viewtopic.php?t=35095) and [Multiverse](https://subsetgames.com/forum/viewtopic.php?t=35332).
 
-## FTL HS/MV Player Ship Tutorial
+## Using Superluminal
+
+To learn how to use Superluminal you can watch this tutorial.
+
+### [FTL HS/MV Player Ship Tutorial](https://www.youtube.com/watch?v=3PSGVwlA95o)
 [![FTL HS/MV Player Ship Tutorial](https://img.youtube.com/vi/3PSGVwlA95o/maxresdefault.jpg)](https://www.youtube.com/watch?v=3PSGVwlA95o)
 
-There are a few things I missed when making this tutorial. Under Ship Loadout and Properties, your Layout Filename and Image Namespace should also use a unique prefix like the one for the Blueprint Name.
+There are a few things I missed when making this. Under Ship Loadout and Properties, your Layout Filename and Image Namespace should also use a unique prefix like the one for the Blueprint Name.
 
 [[/img/ship-creation-guide/layout-name.png]]
 
@@ -42,7 +46,7 @@ Replace `your_thruster_animation_name` with the name you gave your thruster anim
 
 ### Manual Method
 
-First, download [assets/Sheild_Template.xcf](../blob/master/assets/Sheild_Template.xcf) from this repository and open it in GIMP. Select the Shield layer, go to Layer > Scale Layer, and click the chain icon to the left of the dimensions to unlink them. Enter the dimensions you want and click the Scale button.
+First, download [assets/Shield_Template.xcf](../blob/master/assets/Shield_Template.xcf) from this repository and open it in GIMP. Select the Shield layer, go to Layer > Scale Layer, and click the chain icon to the left of the dimensions to unlink them. Enter the dimensions you want and click the Scale button.
 
 When the shield is the size you want, use the Select by Color Tool to select all of the blue pixels on the Honeycomb layer. With the selection active, go back to the Shield layer, then go to Colors > Hue-Saturation. Make the following adjustments:<br/>
 Hue: -2<br/>
@@ -64,6 +68,8 @@ Achievement Icons can be made using this palette.
 [[/img/ship-creation-guide/pallete-achievement.png]]
 
 To make an icon from your ship's hull image, you can follow AgentTHeKat's tutorial.
+
+### [Icon Creation Turorial](https://www.youtube.com/watch?v=HNQs6TZ3xVw)
 
 [![cheivements](https://img.youtube.com/vi/HNQs6TZ3xVw/maxresdefault.jpg)](https://www.youtube.com/watch?v=HNQs6TZ3xVw)
 
