@@ -1,0 +1,1 @@
+If you want to read the wiki, **don't use the files in the `wiki/content` folder!** Instead, visit the [wiki](../../wiki) itself.
