@@ -36,7 +36,7 @@ Weapon animations are more sophisticated. Take for example the Chain Ion animati
     <fireFrame>5</fireFrame>
     <firePoint  x="17" y="17"/>
     <mountPoint x="5" y="45"/>
-	<!-- <delayChargeAnim>0.98</delayChargeAnim> -->
+    <!-- <delayChargeAnim>0.98</delayChargeAnim> -->
     <chargeImage>weapons/ion_chain_glow.png</chargeImage>
     <boost>ion_chaingun_charge</boost>
 </weaponAnim>
