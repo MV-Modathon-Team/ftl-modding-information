@@ -45,8 +45,11 @@ Weapon animations are more sophisticated. Take for example the Chain Ion animati
 The `animSheet` tag works the same as for standard animations. Instead of an `anim` tag, weapons use the `weaponAnim` tag. The `sheet` and `desc` child tags work the same as for the standard `anim` tag. The other tags work as follows:<br/>
 `chargedFrame` - Which frame is displayed when the weapon is fully charged. Frames are counted from left to right starting at 0, so the value of 1 will display the second frame when the weapon is charged. While the weapon is charging, the weapon will display all the frames leading up to the `chargedFrame`. The minimum value of `chargedFrame` is 1, the first frame (frame 0) must be the one displayed while the weapon is at 0 charge.<br/>
 `fireFrame` - Which frame the weapon fires it's projectile during. For this weapon, when fired, it will play every frame from the third (frame 2, the one frame after the `chargedFrame` of 1) to the sixth (frame 5), firing on the sixth, then playing the remaining frames before resetting to the first. The minimum value of `fireFrame` is 2.<br/>
-`firePoint` - The location on the weapon sprite the projectile is created at when it fires. The coordinates (0, 0) are at the top-left corner of the sprite, increasing as you move towards the bottom-right.<br/>
-`mountPoint` - The location on the weapon sprite that is anchored to the mount point on the ship.<br/>
+`firePoint` - The location on the weapon sprite the projectile is created at when it fires.<br/>
+`mountPoint` - The location on the weapon sprite that is anchored to the mount point on the ship.
+
+[[/img/animations-guide/weapon-anim-coord-ref.png]]
+
 `delayChargeAnim` (optional) - The percentage the weapon must be charged before displaying frames beyond the first. This is used by vanilla bomb weapon animations to prevent the animation of the bomb coming out of the launcher from playing until it's nearly charged. Value can be between 0 and 1.<br/>
 `chargeImage` (optional) - The location of the charge image, which if defined, will gradually increase in opacity as the weapon charges. For example, the charge image used for the Chain Ion:
 
