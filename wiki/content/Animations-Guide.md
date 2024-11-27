@@ -50,7 +50,7 @@ The `animSheet` tag works the same as for standard animations. Instead of an `an
 
 [[/img/animations-guide/weapon-anim-coord-ref.png]]
 
-`delayChargeAnim` (optional) - The percentage the weapon must be charged before displaying frames beyond the first. This is used by vanilla bomb weapon animations to prevent the animation of the bomb coming out of the launcher from playing until it's nearly charged. Value can be between 0 and 1.<br/>
+`delayChargeAnim` (optional)  The percentage the weapon must be charged before displaying frames beyond the first. This is used by vanilla bomb weapon animations to prevent the animation of the bomb coming out of the launcher from playing until it's nearly charged. Value can be between 0 and 1.<br/>
 `chargeImage` (optional) - The location of the charge image, which if defined, will gradually increase in opacity as the weapon charges. For example, the charge image used for the Chain Ion:
 
 [[/img/animations-guide/ion_chain_glow.png]]
