@@ -1,3 +1,5 @@
+## Understanding XML
+
 The core of FTL modding is XML, which stands for Extensible Markup Language. A programming language has data as well as logic, whereas a markup language only has data, making it much more accessible. In other words, you don't need a degree in computer science to mod FTL.
 
 XML is made up of tags, attributes and values. Every tag can have any number of attributes and any number of children. A tag can also contain a value instead of children.
@@ -31,3 +33,7 @@ If you want to make a note for a particular tag, you might write something like 
     <tag3/> <!-- No sound :( -->
 </parent-tag>
 ```
+
+## Using XML
+
+The plan is to eventually have a guide on this wiki for every application for XML in FTL modding. For now, you can use [Kix's old modding guide](<https://docs.google.com/document/d/1MZ-LbQdQ9qG2eNDbAVk6rfabbKJi4_fAV-ARA6IHw2M>).
