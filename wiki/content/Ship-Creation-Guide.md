@@ -150,7 +150,7 @@ The value of the `arrow` tag determines what the target ship is. The arrow will 
 
 The attributes of the `arrow` tag function as follows:<br/>
 `variant` - Value can be `a`, `b`, `c` or `all`. Determines which variant the arrow is drawn for. The source and target ship must be the same variant. If the value is set to `all` or the `variant` attribute is omitted, then the arrow appears on every page (but the target ship is always the specific variant).<br/>
-`tooltip` - The ID of the text as defined in `text_misc.xml` to use for the hover tooltip. For defining text strings, see the [Misc Data Guide](Misc-Data-Guide).<br/>
+`tooltip` - The ID of the text as defined in `text_misc.xml` to use for the hover tooltip. For defining text strings, see the [Misc Data Guide](Misc-Data-Guide#text-data).<br/>
 `tooltipText` - Literal text to use for hover tooltip. Use instead of the `tooltip` attribute if you want to define the text directly instead of in `text_misc.xml`.<br/>
 `image` - Full image name of the arrow asset. Arrow images must be in the `img\customizeUI` folder of your mod. Uses the default victory arrow asset in the corresponding direction if omitted.<br/>
 `lockedImage` - Full image name of the arrow asset when source ship is locked. Uses the default locked arrow asset in the corresponding direction if omitted.<br/>
