@@ -57,7 +57,7 @@ Press the OK button, then click the eye icon next to the Honeycomb layer. Press 
 
 ### Script Method
 
-If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](https://youtu.be/08GqtK9hUjE), you can use the script included with Multiverse to generate a shield image automatically. Open the latest Multiverse assets `.zip` archive and extract `shield_base_bubble.png`, `shield_base_hex.png` and `shield-updater.py` from the `img/ship` directory. Place them in the same directory as your shield image and resize your shield image to whatever dimensions you want, then run `shield-updater.py`. When you're done, you can remove the three files extracted from Multiverse.
+If you have Python and Pillow installed as shown in the [Cloak Image Tutorial](https://youtu.be/08GqtK9hUjE), you can use the script included with Multiverse to generate a shield image automatically. First, make sure you have a rough shield image that fits your ship to use as a base. You can open one of the vanilla shield images you extracted using the [Extracting Vanilla Assets](Extracting-Vanilla-Assets) guide in the editor of your choice, resize it (don't worry about loss of quality), then export it. When you have a shield image to run the script on, open the latest Multiverse assets `.zip` archive and extract `shield_base_bubble.png`, `shield_base_hex.png` and `shield-updater.py` from the `img/ship` directory. Place them in the same directory as your shield image, then run `shield-updater.py`. When you're done, you can remove the three files extracted from Multiverse.
 
 ## Unlock Icons and Conditions
 
